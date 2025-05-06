@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>App Médico</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script defer src="script.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header com link para perfil -->
+    <header class="header">
+      <div class="user-info">
+        <div>
+          <p class="greeting">Olá, Bem Vindo(a)</p>
+          <p class="name clickable" data-page="perfil">Camila Queiroz</p>
+        </div>
+        <img src="https://via.placeholder.com/40" alt="Usuário" class="profile-img" />
+      </div>
+    </header>
+
+    <!-- Menu de botões -->
+    <section class="main-buttons">
+      <div class="button" data-page="laudos"><i class="fas fa-file-medical"></i><span>Leitor De Laudos</span></div>
+      <div class="button" data-page="exames"><i class="fas fa-vials"></i><span>Exames</span></div>
+      <div class="button" data-page="medicacoes"><i class="fas fa-pills"></i><span>Medicações</span></div>
+      <div class="button" data-page="consultas"><i class="fas fa-user-md"></i><span>Consultas</span></div>
+    </section>
+
+    <!-- Páginas do app -->
+    <div class="pages">
+      <div id="home" class="page active">
+        <section class="schedule">
+          <div class="day">
+            <div class="date"><p class="number">11</p><p class="weekday">SEG</p></div>
+            <div class="details"><p>Vitamina D</p><p>Mirtazapina</p><span>07:00 — 22:00</span></div>
+            <a class="view-all">Ver tudo</a>
+          </div>
+          <div class="day">
+            <div class="date"><p class="number">12</p><p class="weekday">TER</p></div>
+            <div class="details"><p>Consulta | CheckUp</p><p>Medicações</p><span>09:30</span></div>
+            <a class="view-all">Ver tudo</a>
+          </div>
+        </section>
+      </div>
+
+      <div id="laudos" class="page">Página de Leitor de Laudos</div>
+      <div id="exames" class="page">Página de Exames</div>
+      <div id="medicacoes" class="page">Página de Medicações</div>
+      <div id="consultas" class="page">Página de Consultas</div>
+
+      <!-- Página de Perfil -->
+      <div id="perfil" class="page">
+        <div class="perfil-header">
+          <h2>Perfil</h2>
+          <div class="perfil-foto">
+            <img src="https://via.placeholder.com/100" alt="Foto de Perfil">
+          </div>
+          <h3 class="perfil-nome">Camila Queiroz</h3>
+        </div>
+        <ul class="perfil-opcoes">
+          <li><i class="fas fa-user"></i> Informações</li>
+          <li><i class="fas fa-lock"></i> Política de Privacidade</li>
+          <li><i class="fas fa-cog"></i> Configurações</li>
+          <li><i class="fas fa-question-circle"></i> Ajuda</li>
+          <li><i class="fas fa-sign-out-alt"></i> Sair</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Menu inferior -->
+    <nav class="bottom-nav">
+      <i class="fas fa-home" data-page="home"></i>
+      <i class="fas fa-envelope"></i>
+      <i class="fas fa-file-medical-alt" data-page="laudos"></i>
+      <i class="fas fa-calendar-alt" data-page="consultas"></i>
+    </nav>
+  </div>
+</body>
+</html>
+
+<div class="perfil">
+  <div class="perfil-header">
+      <div class="perfil-foto">
+          <img src="perfil.jpg" alt="Foto do usuário">
+      </div>
+      <h2 class="perfil-nome">Nome do Usuário</h2>
+  </div>
+  <ul class="perfil-opcoes">
+      <li class="clickable" id="editar-foto">
+          <i class="fas fa-user-circle"></i> Alterar Foto de Perfil
+      </li>
+      <li class="clickable">
+          <i class="fas fa-cog"></i> Configurações
+      </li>
+      <li class="clickable">
+          <i class="fas fa-shield-alt"></i> Privacidade
+      </li>
+  </ul>
+</div>
