@@ -1,209 +1,217 @@
-body{
-    /**/
-      height: 1920;
-      width: 1080;
-      margin: 0;
-      padding:0;
-      }
+body {
+    height: 1920px;
+    width: 1080px;
+    margin: 0;
+    padding: 0;
+  }
   
-      * {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
-          font-family: 'Arial', sans-serif;
-        }
-        
-        body {
-          background-color: #f2f2fa;
-        }
-        
-        .app-container {
-          max-width: 400px;
-          margin: 0 auto;
-          background-color: white;
-          border-radius: 20px;
-          overflow: hidden;
-          box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        
-        .header { /*olá bem vindo*/
-          background: linear-gradient(180deg, #a48ce0, #c2b6f7);
-          padding: 20px;
-          border-bottom-left-radius: 20px;
-          border-bottom-right-radius: 20px;
-          color: white;
-        }
-        
-        .user-info {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-        }
-        
-        .profile-img {
-          width: 40px;
-          height: 40px;
-          border-radius: 50%;
-        }
-        
-        .greeting {
-          font-size: 14px;
-          opacity: 0.9;
-        }
-        
-        .name {
-          font-weight: bold;
-          font-size: 16px;
-        }
-        
-        .main-buttons {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: space-around;
-          padding: 20px 10px;
-          background-color: #f5f5fb;
-        }
-        
-        .button {
-          background-color: #dcd6fa;
-          width: 45%;
-          margin: 8px 0;
-          padding: 10px;
-          text-align: center;
-          border-radius: 12px;
-          color: #4b3b86;
-          font-size: 14px;
-          display: flex;
-          flex-direction: column;
-          gap: 5px;
-        }
-        
-        .button i {
-          font-size: 24px;
-        }
-        
-        .schedule {
-          padding: 15px;
-        }
-        
-        .day {
-          background-color: #e4defc;
-          border-radius: 15px;
-          padding: 10px 15px;
-          margin-bottom: 12px;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-        }
-        
-        .date {
-          text-align: center;
-          background-color: #c1b2f3;
-          border-radius: 10px;
-          padding: 5px 8px;
-          color: white;
-          font-weight: bold;
-        }
-        
-        .number {
-          font-size: 18px;
-        }
-        
-        .weekday {
-          font-size: 12px;
-        }
-        
-        .details {
-          flex-grow: 1;
-          margin-left: 15px;
-          font-size: 14px;
-        }
-        
-        .view-all {
-          font-size: 12px;
-          color: #5a4fcf;
-          text-decoration: underline;
-        }
-        
-        .bottom-nav {
-          position: sticky;
-          bottom: 0;
-          background-color: #e4defc;
-          display: flex;
-          justify-content: space-around;
-          padding: 12px 0;
-          border-top: 1px solid #ccc;
-        }
-        
-        .bottom-nav i {
-          font-size: 20px;
-          color: #4b3b86;
-      
-        }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+  }
   
-        .page {
-          display: none;
-          padding: 20px;
-        }
-        
-        .page.active {
-          display: block;
-        }
-        
-        .pages {
-          min-height: 200px;
-        }
-        
-        .clickable {
-          cursor: pointer;
-          text-decoration: underline;
-        }
-        
-        .perfil-header {
-          background: #a48ce0;
-          text-align: center;
-          padding: 30px 10px 20px;
-          color: white;
-          border-bottom-left-radius: 20px;
-          border-bottom-right-radius: 20px;
-        }
-        
-        .perfil-foto img {
-          width: 100px;
-          height: 100px;
-          border-radius: 50%;
-          border: 3px solid white;
-          margin-top: 10px;
-        }
-        
-        .perfil-nome {
-          color: #000;
-          margin-top: 10px;
-        }
-        
-        .perfil-opcoes {
-          list-style: none;
-          padding: 20px;
-        }
-        
-        .perfil-opcoes li {
-          display: flex;
-          align-items: center;
-          gap: 10px;
-          padding: 15px 10px;
-          font-size: 16px;
-          color: #4b3b86;
-          border-bottom: 1px solid #eee;
-        }
-        
-        .perfil-opcoes li i {
-          font-size: 18px;
-          color: #a48ce0;
-        }
-        body.perfil-ativo .main-buttons {
+  body {
+    background-color: #22224f;
+  }
+  
+  .app-container {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #F3F3FD;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .header {
+    background: #8F87F1;
+    height: 180px;
+    border-bottom-left-radius: 100% 100%;
+    border-bottom-right-radius: 100% 100%;
+    color: white;
+    position: relative;
+    padding-top: 50px;
+  }
+  
+  .user-info {
+    position: absolute;
+    top: 20px;        /* Alinha ao topo */
+    right: 20px;      /* Alinha à direita */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+  
+  .profile-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+  
+  .greeting {
+    font-size: 14px;
+    opacity: 0.9;
+    margin-bottom: 4px;
+  }
+  
+  .name {
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  .main-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding: 20px;
+    background-color: #F3F3FD;
+  }
+  
+  .button {
+    background-color: #dcd6fa;
+    aspect-ratio: 1/1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    color: #4b3b86;
+    font-size: 14px;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .button i {
+    font-size: 24px;
+  }
+  
+  .schedule {
+    padding: 15px;
+  }
+  
+  .day {
+    background-color: #e4defc;
+    border-radius: 15px;
+    padding: 10px 15px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .date {
+    text-align: center;
+    background-color: #c1b2f3;
+    border-radius: 10px;
+    padding: 5px 8px;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .number {
+    font-size: 18px;
+  }
+  
+  .weekday {
+    font-size: 12px;
+  }
+  
+  .details {
+    flex-grow: 1;
+    margin-left: 15px;
+    font-size: 14px;
+  }
+  
+  .view-all {
+    font-size: 12px;
+    color: #5a4fcf;
+    text-decoration: underline;
+  }
+  
+  .bottom-nav {
+    position: sticky;
+    bottom: 0;
+    background-color: #e4defc;
+    display: flex;
+    justify-content: space-around;
+    padding: 12px 0;
+    border-top: 1px solid #ccc;
+  }
+  
+  .bottom-nav i {
+    font-size: 20px;
+    color: #4b3b86;
+  }
+  
+  .bottom-nav i.ativo {
+    color: #000;
+    font-weight: bold;
+  }
+  
+  .page {
     display: none;
+    padding: 20px;
+  }
+  
+  .page.active {
+    display: block;
+  }
+  
+  .pages {
+    min-height: 200px;
+  }
+  
+  .clickable {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  
+  .perfil-header {
+    background: #a48ce0;
+    text-align: center;
+    padding: 30px 10px 20px;
+    color: white;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+  
+  .perfil-foto img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid white;
+    margin-top: 10px;
+  }
+  
+  .perfil-nome {
+    color: #000;
+    margin-top: 10px;
+  }
+  
+  .perfil-opcoes {
+    list-style: none;
+    padding: 20px;
+  }
+  
+  .perfil-opcoes li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 10px;
+    font-size: 16px;
+    color: #4b3b86;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .perfil-opcoes li i {
+    font-size: 18px;
+    color: #a48ce0;
   }
   
   body.perfil-ativo .main-buttons {
-      display: none;
-    }
+    display: none;
+  }
+  
