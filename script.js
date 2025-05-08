@@ -2,18 +2,26 @@ document.querySelectorAll('[data-page]').forEach(button => {
     button.addEventListener('click', () => {
       const pageId = button.getAttribute('data-page');
      
-      document.addEventListener("DOMContentLoaded", () => {
-        // Esconde a página de perfil ao carregar
-        document.getElementById("perfil").style.display = "none";
+      document.querySelectorAll('[data-page]').forEach(button => {
+        button.addEventListener('click', () => {
+            const pageId = button.getAttribute('data-page');
     
-        // Recupera nome e foto do usuário no LocalStorage
-        const nomeUsuario = localStorage.getItem("nomeUsuario") || "Camila Queiroz";
-        document.querySelector(".perfil-nome").innerText = nomeUsuario;
+            // Esconde todas as páginas antes de exibir a selecionada
+            document.querySelectorAll('.page').forEach(page => page.style.display = "none");
+            document.getElementById(pageId).style.display = "block";
     
-        const fotoPerfil = localStorage.getItem("fotoPerfil") || "https://via.placeholder.com/100";
-        document.getElementById("fotoPerfil").src = fotoPerfil;
-    });
+            // Atualiza o estado do menu inferior
+            document.querySelectorAll('.bottom-nav i').forEach(icon => icon.classList.remove('ativo'));
+            const currentIcon = document.querySelector(`.bottom-nav i[data-page="${pageId}"]`);
+            if (currentIcon) currentIcon.classList.add('ativo');
     
+            // Garante que ao sair do perfil ele seja ocultado corretamente
+            if (pageId !== "perfil") {
+                document.body.classList.remove("perfil-ativo");
+                document.getElementById("perfil").style.display = "none";
+            }
+        });
+    }); 
     document.querySelector(".name").addEventListener("click", () => {
       // Esconde todas as outras páginas antes de exibir o perfil
       document.querySelectorAll(".page").forEach(page => page.style.display = "none");
