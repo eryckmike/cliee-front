@@ -20,3 +20,69 @@ if (currentIcon) currentIcon.classList.add('ativo');
     document.querySelector(".perfil").style.display = "block";
     document.body.classList.add("perfil-ativo"); // Oculta os botões principais quando o perfil é aberto
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Recupera o nome e foto do usuário no localstorage ao carregar a página
+  const nomeUsuario = localStorage.getItem("nomeUsuario") || "Camila Queiroz";
+  document.querySelector(".perfil-nome").innerText = nomeUsuario;
+
+  const fotoPerfil = localStorage.getItem("fotoPerfil") || "https://via.placeholder.com/100";
+  document.querySelector(".perfil-foto img").src = fotoPerfil;
+});
+
+// Função para salvar lembretes de consultas e medicações
+function salvarLembrete(tipo, descricao, horario) {
+  let lembretes = JSON.parse(localStorage.getItem("lembretes")) || [];
+  lembretes.push({ tipo, descricao, horario });
+  localStorage.setItem("lembretes", JSON.stringify(lembretes));
+  atualizarLembretesNaTela();
+}
+
+// Função para mostrar lembretes add na tela
+function atualizarLembretesNaTela() {
+  const container = document.querySelector(".schedule");
+  container.innerHTML = "";
+  let lembretes = JSON.parse(localStorage.getItem("lembretes")) || [];
+
+  lembretes.forEach((lembrete, index) => {
+      const item = document.createElement("div");
+      item.classList.add("day");
+      item.innerHTML = `
+          <div class="details">
+              <p>${lembrete.tipo}: ${lembrete.descricao}</p>
+              <span>${lembrete.horario}</span>
+          </div>
+          <button onclick="removerLembrete(${index})">❌</button>
+      `;
+      container.appendChild(item);
+  });
+}
+
+// Função para remover um lembrete 
+function removerLembrete(index) {
+  let lembretes = JSON.parse(localStorage.getItem("lembretes")) || [];
+  lembretes.splice(index, 1);
+  localStorage.setItem("lembretes", JSON.stringify(lembretes));
+  atualizarLembretesNaTela();
+}
+
+document.addEventListener("DOMContentLoaded", atualizarLembretesNaTela);
+
+// Função de notificações de lembrete no horário certo
+setInterval(() => {
+  let agora = new Date().toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" });
+  let lembretes = JSON.parse(localStorage.getItem("lembretes")) || [];
+
+  lembretes.forEach(lembrete => {
+      if (lembrete.horario === agora) {
+          alert(`🔔 Lembrete: ${lembrete.tipo} - ${lembrete.descricao}`);
+      }
+  });
+}, 60000);
+
+// Função de logout p limpar dados e reiniciar sessão
+document.querySelector(".logout").addEventListener("click", () => {
+  localStorage.clear();
+  alert("Sessão encerrada!");
+  window.location.reload();
+});

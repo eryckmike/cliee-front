@@ -215,3 +215,65 @@ body {
     display: none;
   }
   
+  .perfil-header {
+    background: #a48ce0;
+    text-align: center;
+    padding: 30px 10px;
+    color: white;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.perfil-foto img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid white;
+    margin-top: 10px;
+}
+
+.perfil-nome {
+    color: #000;
+    margin-top: 10px;
+}
+
+.perfil-opcoes {
+    list-style: none;
+    padding: 20px;
+}
+
+.perfil-opcoes li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 10px;
+    font-size: 16px;
+    color: #4b3b86;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+}
+
+.perfil-opcoes li i {
+    font-size: 18px;
+    color: #a48ce0;
+}
+
+.schedule {
+    padding: 15px;
+}
+
+.day {
+    background-color: #e4defc;
+    border-radius: 15px;
+    padding: 10px 15px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.details {
+    flex-grow: 1;
+    margin-left: 15px;
+    font-size: 14px;
+}

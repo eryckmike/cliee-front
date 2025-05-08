@@ -77,3 +77,54 @@
   </div>
 </body>
 </html>
+<div class="perfil-header">
+    <h2>Perfil</h2>
+    <div class="perfil-foto">
+        <img src="https://via.placeholder.com/100" alt="Foto de Perfil">
+    </div>
+    <h3 class="perfil-nome">Camila Queiroz</h3>
+</div>
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Perfil & Lembretes</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script defer src="script.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="app-container">
+    
+    <!-- Tela de Perfil -->
+    <div id="perfil" class="page active">
+        <div class="perfil-header">
+          <h2>Perfil</h2>
+          <div class="perfil-foto">
+            <!-- Aqui sera exibid a foto de perfil -->
+            <img src="https://via.placeholder.com/100" alt="Foto de Perfil">
+          </div>
+          <!-- Nome do usuário -->
+          <h3 class="perfil-nome">Camila Queiroz</h3>
+        </div>
+        <ul class="perfil-opcoes">
+          <li><i class="fas fa-user"></i> Informações</li>
+          <li><i class="fas fa-lock"></i> Política de Privacidade</li>
+          <li><i class="fas fa-cog"></i> Configurações</li>
+          <li><i class="fas fa-question-circle"></i> Ajuda</li>
+          <li class="logout"><i class="fas fa-sign-out-alt"></i> Sair</li>
+        </ul>
+    </div>
+
+    <!-- Tela de Lembretes -->
+    <div id="home" class="page">
+        <section class="schedule">
+          <!-- Aqui os lembretes cadastrados serao mostrados -->
+        </section>
+    </div>
+
+  </div>
+</body>
+</html>
