@@ -14,10 +14,12 @@ document.querySelectorAll('[data-page]').forEach(button => {
         document.getElementById("fotoPerfil").src = fotoPerfil;
     });
     
-    
-    document.querySelector(".perfil-foto img").addEventListener("click", () => {
-      document.querySelectorAll(".page").forEach(page => page.style.display = "none"); // Esconde todas as páginas
-      document.getElementById("perfil").style.display = "block"; // Mostra só o perfil
+    document.querySelector(".name").addEventListener("click", () => {
+      // Esconde todas as outras páginas antes de exibir o perfil
+      document.querySelectorAll(".page").forEach(page => page.style.display = "none");
+  
+      // Exibe corretamente a tela do perfil
+      document.getElementById("perfil").style.display = "block";
   });
   
       // Alterna visibilidade de páginas
