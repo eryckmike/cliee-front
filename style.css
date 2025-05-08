@@ -298,3 +298,28 @@ body {
 #uploadFoto {
   display: none; /* Mantém oculto até o usuário clicar no botão */
 }
+
+.perfil-foto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.trocar-foto {
+  background-color: #a48ce0;
+  color: white;
+  padding: 5px 10px;
+  font-size: 14px;
+  border-radius: 5px;
+  margin-top: 8px;
+  cursor: pointer;
+}
+
+#uploadFoto {
+  display: none; /* Oculta até que o usuário clique no botão */
+}
+
+#perfil {
+  display: none; /* Esconde o perfil no carregamento */
+}

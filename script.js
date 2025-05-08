@@ -1,17 +1,24 @@
 document.querySelectorAll('[data-page]').forEach(button => {
     button.addEventListener('click', () => {
       const pageId = button.getAttribute('data-page');
+     
       document.addEventListener("DOMContentLoaded", () => {
         // Esconde a página de perfil ao carregar
-        document.getElementById("perfil").classList.remove("active");
+        document.getElementById("perfil").style.display = "none";
+    
+        // Recupera nome e foto do usuário no LocalStorage
+        const nomeUsuario = localStorage.getItem("nomeUsuario") || "Camila Queiroz";
+        document.querySelector(".perfil-nome").innerText = nomeUsuario;
+    
+        const fotoPerfil = localStorage.getItem("fotoPerfil") || "https://via.placeholder.com/100";
+        document.getElementById("fotoPerfil").src = fotoPerfil;
     });
     
-    // Quando clicar na foto de perfil, ativa a tela 
+    
     document.querySelector(".perfil-foto img").addEventListener("click", () => {
-        document.querySelectorAll(".page").forEach(page => page.classList.remove("active"));
-        document.getElementById("perfil").classList.add("active");
-    });
-    
+      document.querySelectorAll(".page").forEach(page => page.style.display = "none"); // Esconde todas as páginas
+      document.getElementById("perfil").style.display = "block"; // Mostra só o perfil
+  });
   
       // Alterna visibilidade de páginas
       document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
