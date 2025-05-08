@@ -22,13 +22,29 @@ if (currentIcon) currentIcon.classList.add('ativo');
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Recupera o nome e foto do usuário no localstorage ao carregar a página
+  // Recupera o nome e foto do usuário no localStorage ao carregar a página
   const nomeUsuario = localStorage.getItem("nomeUsuario") || "Camila Queiroz";
   document.querySelector(".perfil-nome").innerText = nomeUsuario;
 
   const fotoPerfil = localStorage.getItem("fotoPerfil") || "https://via.placeholder.com/100";
-  document.querySelector(".perfil-foto img").src = fotoPerfil;
+  document.getElementById("fotoPerfil").src = fotoPerfil;
 });
+
+// Função para trocar a foto de perfil
+document.getElementById("uploadFoto").addEventListener("change", function(event) {
+    const fotoPerfil = document.getElementById("fotoPerfil");
+    const arquivo = event.target.files[0];
+
+    if (arquivo) {
+        const leitor = new FileReader();
+        leitor.onload = function(e) {
+            fotoPerfil.src = e.target.result;
+            localStorage.setItem("fotoPerfil", e.target.result); // Salva a nova foto
+        };
+        leitor.readAsDataURL(arquivo);
+    }
+});
+
 
 // Função para salvar lembretes de consultas e medicações
 function salvarLembrete(tipo, descricao, horario) {

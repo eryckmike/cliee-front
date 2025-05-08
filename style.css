@@ -277,3 +277,24 @@ body {
     margin-left: 15px;
     font-size: 14px;
 }
+
+.perfil-foto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.trocar-foto {
+  background-color: #a48ce0;
+  color: white;
+  padding: 5px 10px;
+  font-size: 14px;
+  border-radius: 5px;
+  margin-top: 8px;
+  cursor: pointer;
+}
+
+#uploadFoto {
+  display: none; /* Mantém oculto até o usuário clicar no botão */
+}

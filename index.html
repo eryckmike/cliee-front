@@ -49,23 +49,24 @@
       <div id="consultas" class="page">Página de Consultas</div>
 
       <!-- Página de Perfil -->
-      <div id="perfil" class="page">
-        <div class="perfil-header">
-          <h2>Perfil</h2>
-          <div class="perfil-foto">
-            <img src="https://via.placeholder.com/100" alt="Foto de Perfil">
-          </div>
-          <h3 class="perfil-nome">Camila Queiroz</h3>
-        </div>
-        <ul class="perfil-opcoes">
-          <li><i class="fas fa-user"></i> Informações</li>
-          <li><i class="fas fa-lock"></i> Política de Privacidade</li>
-          <li><i class="fas fa-cog"></i> Configurações</li>
-          <li><i class="fas fa-question-circle"></i> Ajuda</li>
-          <li><i class="fas fa-sign-out-alt"></i> Sair</li>
-        </ul>
+<div id="perfil" class="page">
+  <div class="perfil-header">
+      <h2>Perfil</h2>
+      <div class="perfil-foto">
+          <img src="https://via.placeholder.com/100" alt="Foto de Perfil" id="fotoPerfil">
+          <label for="uploadFoto" class="trocar-foto">Trocar Foto</label>
+          <input type="file" id="uploadFoto" accept="image/*">
       </div>
-    </div>
+      <h3 class="perfil-nome">Camila Queiroz</h3>
+  </div>
+  <ul class="perfil-opcoes">
+      <li><i class="fas fa-user"></i> Informações</li>
+      <li><i class="fas fa-lock"></i> Política de Privacidade</li>
+      <li><i class="fas fa-cog"></i> Configurações</li>
+      <li><i class="fas fa-question-circle"></i> Ajuda</li>
+      <li class="logout"><i class="fas fa-sign-out-alt"></i> Sair</li>
+  </ul>
+</div>
 
     <!-- Menu inferior -->
     <nav class="bottom-nav">
