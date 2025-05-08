@@ -1,6 +1,17 @@
 document.querySelectorAll('[data-page]').forEach(button => {
     button.addEventListener('click', () => {
       const pageId = button.getAttribute('data-page');
+      document.addEventListener("DOMContentLoaded", () => {
+        // Esconde a página de perfil ao carregar
+        document.getElementById("perfil").classList.remove("active");
+    });
+    
+    // Quando clicar na foto de perfil, ativa a tela 
+    document.querySelector(".perfil-foto img").addEventListener("click", () => {
+        document.querySelectorAll(".page").forEach(page => page.classList.remove("active"));
+        document.getElementById("perfil").classList.add("active");
+    });
+    
   
       // Alterna visibilidade de páginas
       document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
